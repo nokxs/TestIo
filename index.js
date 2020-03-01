@@ -106,7 +106,7 @@ const apiMethods = {
   writeFile,
 };
 
-function test(scriptPath, testFunction) {
+function check(scriptPath, testFunction) {
   const requirePath = __dirname.includes("node_modules") ? `../../${scriptPath}` : scriptPath;
 
   try {
@@ -127,4 +127,4 @@ function test(scriptPath, testFunction) {
 
 module.exports = apiMethods;
 
-global.test = test;
+global.check = check;

@@ -14,8 +14,8 @@ describe("Switch tests", () => {
     // This test checks if Shelly_2 is switched on, when Shelly_1 is switched on.
     it("switches both shellies on", () => {
 
-        // The test function loads the IoBroker script for the test and unloads it again after the test
-        test("../../path/to/iobroker/script", () => {
+        // The check function loads the IoBroker script for the test and unloads it again after the test
+        check("../../path/to/iobroker/script", () => {
 
             // simulate that Shelly_1 is switched on
             jsMock.on.trigger("shelly.0.Shelly_1.Relay0.Switch", { 

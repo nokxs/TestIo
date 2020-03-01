@@ -1,10 +1,10 @@
 {
-  "name": "iobroker-js-script-test",
+  "name": "test-io",
   "version": "0.0.1",
   "description": "A framework to test IoBroker JavaScript scripts",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test/**"
   },
   "author": "",
   "license": "ISC",
