@@ -1,5 +1,5 @@
 # TestIo - IoBroker JavaScript Test Framework
-![Actions Status](https://github.com/nokxs/TestIo/workflows/CI/badge.svg)]
+![Actions Status](https://github.com/nokxs/TestIo/workflows/CI/badge.svg)
 
 ![Logo](assets/logo.png)
 

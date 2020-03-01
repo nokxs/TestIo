@@ -1,5 +1,5 @@
 {
-  "name": "test-io",
+  "name": "iobroker-test-io",
   "version": "0.0.1",
   "description": "A framework to test IoBroker JavaScript scripts",
   "main": "index.js",
