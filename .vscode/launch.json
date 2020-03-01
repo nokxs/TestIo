@@ -10,7 +10,7 @@
               "--timeout",
               "999999",
               "--colors",
-              "${workspaceFolder}/IoBroker/Test/Integration/test"
+              "${workspaceFolder}/test"
           ],
           "console": "integratedTerminal",
           "internalConsoleOptions": "neverOpen"

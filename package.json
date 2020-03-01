@@ -4,7 +4,7 @@
   "description": "A framework to test IoBroker JavaScript scripts",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**"
+    "test": "mocha test/smoke/smoke.tests.js"
   },
   "author": "",
   "license": "ISC",
