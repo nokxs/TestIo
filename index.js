@@ -5,14 +5,16 @@ const clearStateDelayed = require("./lib/fakes/clearStateDelayed");
 const clearTimeout = require("./lib/fakes/clearTimeout");
 const compareTime = require("./lib/fakes/compareTime");
 const createState = require("./lib/fakes/createState");
+const deleteObject = require("./lib/fakes/deleteObject");
 const deleteState = require("./lib/fakes/deleteState");
 const delFile = require("./lib/fakes/delFile");
 const exec = require("./lib/fakes/exec");
 const extendObject = require("./lib/fakes/extendObject");
 const formatDate = require("./lib/fakes/formatDate");
 const formatValue = require("./lib/fakes/formatValue");
-const getAstroDate = require("./lib/fakes/getAstroDate");
+const clearSchedule = require("./lib/fakes/clearSchedule");
 const getAttr = require("./lib/fakes/getAttr");
+const getAstroDate = require("./lib/fakes/getAstroDate");
 const getBinaryState = require("./lib/fakes/getBinaryState");
 const getDateObject = require("./lib/fakes/getDateObject");
 const getEnums = require("./lib/fakes/getEnums");
@@ -59,14 +61,16 @@ const apiMethods = {
   clearTimeout,
   compareTime,
   createState,
+  deleteObject,
   deleteState,
   delFile,
   exec,
   extendObject,
   formatDate,
   formatValue,
-  getAstroDate,
+  clearSchedule,
   getAttr,
+  getAstroDate,
   getBinaryState,
   getDateObject,
   getEnums,
