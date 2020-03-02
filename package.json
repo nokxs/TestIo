@@ -1,15 +1,22 @@
 {
   "name": "iobroker-test-io",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A framework to test IoBroker JavaScript scripts",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/smoke/smoke.tests.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "nokxs",
+  "license": "MIT",
+  "bugs": "https://github.com/nokxs/TestIo/issues",
+  "homepage": "https://github.com/nokxs/TestIo",
+  "repository": "github:nokxs/TestIo",
+  "keywords": [
+    "iobroker",
+    "javascript",
+    "test"
+  ],  
   "dependencies": {
-    "jslint": "^0.12.1",
     "sinon": "^8.1.1"
   },
   "devDependencies": {

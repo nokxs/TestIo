@@ -1,7 +1,7 @@
 # TestIo - IoBroker JavaScript Test Framework
 ![Actions Status](https://github.com/nokxs/TestIo/workflows/CI/badge.svg)
 
-![Logo](assets/logo.png)
+![Logo](https://raw.githubusercontent.com/nokxs/TestIo/master/assets/logo.png)
 
 TestIo is small framework for testing [IoBroker JavaScript](https://github.com/ioBroker/ioBroker.javascript) scripts. It mocks the functions defined by the [JavaScript engine](https://github.com/ioBroker/ioBroker.javascript/blob/master/docs/en/javascript.md) with [Sinon.js](https://sinonjs.org/).
 
