@@ -1,9 +1,9 @@
-# TestIo - IoBroker JavaScript Test Framework
+# TestIo - ioBroker JavaScript Test Framework
 ![Actions Status](https://github.com/nokxs/TestIo/workflows/CI/badge.svg)
 
 ![Logo](https://raw.githubusercontent.com/nokxs/TestIo/master/assets/logo.png)
 
-TestIo is small framework for testing [IoBroker JavaScript](https://github.com/ioBroker/ioBroker.javascript) scripts. It mocks the functions defined by the [JavaScript engine](https://github.com/ioBroker/ioBroker.javascript/blob/master/docs/en/javascript.md) with [Sinon.js](https://sinonjs.org/).
+TestIo is small framework for testing [ioBroker JavaScript](https://github.com/ioBroker/ioBroker.javascript) scripts. It mocks the functions defined by the [JavaScript engine](https://github.com/ioBroker/ioBroker.javascript/blob/master/docs/en/javascript.md) with [Sinon.js](https://sinonjs.org/).
 
 ## Usage
 
@@ -15,8 +15,8 @@ describe("Switch tests", () => {
     // This test checks if Shelly_2 is switched on, when Shelly_1 is switched on.
     it("switches both shellies on", () => {
 
-        // The check function loads the IoBroker script for the test and unloads it again after the test
-        check("../../path/to/iobroker/script", () => {
+        // The check function loads the ioBroker script for the test and unloads it again after the test
+        check("../../path/to/ioBroker/script", () => {
 
             // simulate that Shelly_1 is switched on
             jsMock.on.trigger("shelly.0.Shelly_1.Relay0.Switch", { 

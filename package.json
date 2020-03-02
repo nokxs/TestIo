@@ -1,7 +1,7 @@
 {
   "name": "iobroker-test-io",
   "version": "0.0.4",
-  "description": "A framework to test IoBroker JavaScript scripts",
+  "description": "A framework to test ioBroker JavaScript scripts",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/smoke/smoke.tests.js"
