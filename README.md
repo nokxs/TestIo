@@ -5,6 +5,10 @@
 
 TestIo is small framework for testing [ioBroker JavaScript](https://github.com/ioBroker/ioBroker.javascript) scripts. It mocks the functions defined by the [JavaScript engine](https://github.com/ioBroker/ioBroker.javascript/blob/master/docs/en/javascript.md) with [Sinon.js](https://sinonjs.org/).
 
+## Installation
+
+`npm install iobroker-test-io`
+
 ## Usage
 
 TestIo can be used with any JavaScript test execution framework and should be loaded with `const testio = require("iobroker-test-io");`. 
