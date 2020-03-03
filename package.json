@@ -14,7 +14,9 @@
   "keywords": [
     "iobroker",
     "javascript",
-    "test"
+    "test",
+    "assert",
+    "testio"
   ],  
   "dependencies": {
     "sinon": "^8.1.1"
