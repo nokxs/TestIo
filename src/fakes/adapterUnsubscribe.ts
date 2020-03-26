@@ -1,11 +1,21 @@
 import * as sinon from "sinon";
 
-export const fake: sinon.SinonStub = sinon.stub();
-
-export function resetHistory(): void {
-  fake.resetHistory();
+export interface IIobrokerFake {
+  fake: sinon.SinonStub;
+  resetHistory(): void;
 }
 
-(<any>global).adapterUnsubscribe = function adapterUnsubscribe(id: string): void {
-  fake(id);
-};
+export class AdapterUnsubscribe implements IIobrokerFake {
+  public fake: sinon.SinonStub = sinon.stub();
+
+  constructor() {
+    const fakeCopy: any = this.fake;
+    (<any>global).adapterUnsubscribe = function adapterUnsubscribe(id: string): void {
+      fakeCopy(id);
+    };
+  }
+
+  public resetHistory(): void {
+    this.fake.resetHistory();
+  }
+}

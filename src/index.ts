@@ -1,5 +1,5 @@
 import * as adapterSubscribe from "./fakes/adapterSubscribe";
-import * as adapterUnsubscribe from "./fakes/adapterUnsubscribe";
+import { AdapterUnsubscribe, IIobrokerFake } from "./fakes/adapterUnsubscribe";
 import * as clearInterval from "./fakes/clearInterval";
 import * as clearStateDelayed from "./fakes/clearStateDelayed";
 
@@ -54,10 +54,9 @@ import subscribe = require("./fakes/subscribe");
 import unsubscribe = require("./fakes/unsubscribe");
 import writeFile = require("./fakes/writeFile");
 
-// tslint:disable-next-line: typedef
-export const mocks = {
+export const mocks: any = {
   adapterSubscribe,
-  adapterUnsubscribe,
+  adapterUnsubscribe: new AdapterUnsubscribe(),
   clearInterval,
   clearStateDelayed,
   clearTimeout,
@@ -123,7 +122,7 @@ export function check(scriptPath: string, testFunction: () => void): void {
     const scriptName: string = require.resolve(requirePath);
     delete require.cache[scriptName];
 
-    Object.values(mocks).forEach((fake) => {
+    Object.values(mocks).forEach((fake: any) => {
       if (typeof fake.resetHistory === "function") {
         fake.resetHistory();
       }
