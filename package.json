@@ -4,6 +4,7 @@
   "description": "A framework to test ioBroker JavaScript scripts",
   "main": "index.js",
   "scripts": {
+    "tsc:w": "tsc -w",
     "test": "mocha test/smoke/smoke.tests.js"
   },
   "author": "nokxs",
