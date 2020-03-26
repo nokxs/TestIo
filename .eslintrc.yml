@@ -10,6 +10,7 @@ globals:
 parserOptions:
   ecmaVersion: 2018
 rules:
+  linebreak-style: false
   quotes:
     - 2
     - "double"
