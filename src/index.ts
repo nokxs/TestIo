@@ -54,7 +54,7 @@ import unsubscribe = require("./fakes/unsubscribe");
 import writeFile = require("./fakes/writeFile");
 
 // tslint:disable-next-line: typedef
-export const apiMethods = {
+export const mocks = {
   adapterSubscribe,
   adapterUnsubscribe,
   clearInterval,
@@ -111,14 +111,16 @@ export const apiMethods = {
   writeFile,
 };
 
-export {};
+// export {};
 
-declare global {
-  function check(scriptPath: string, testFunction: () => void): void;
-}
+// declare global {
+//   function check(scriptPath: string, testFunction: () => void): void;
+// }
 
-// tslint:disable-next-line: typedef
-const _global = global as any;
+// // tslint:disable-next-line: typedef
+// const _global = global as any;
+
+// _global.check = check;
 
 export function check(scriptPath: string, testFunction: () => void): void {
   const requirePath: string = __dirname.includes("node_modules") ? `../../${scriptPath}` : scriptPath;
@@ -131,12 +133,10 @@ export function check(scriptPath: string, testFunction: () => void): void {
     const scriptName: string = require.resolve(requirePath);
     delete require.cache[scriptName];
 
-    Object.values(apiMethods).forEach((fake) => {
+    Object.values(mocks).forEach((fake) => {
       if (typeof fake.resetHistory === "function") {
         fake.resetHistory();
       }
     });
   }
 }
-
-_global.check = check;
