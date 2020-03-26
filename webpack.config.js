@@ -3,7 +3,7 @@ module.exports = {
   devtool: "inline-source-map",
   entry: "./src/index.ts",
   output: {
-    filename: "bundle.js",
+    filename: "index.js",
   },
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
@@ -12,7 +12,7 @@ module.exports = {
   module: {
     rules: [
       // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
-      { test: /\.tsx?$/, loader: "ts-loader" },
+      { test: /\.tsx?$/, loader: "ts-loader", exclude: "/node_modules/" },
     ],
   },
 };

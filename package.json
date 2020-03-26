@@ -20,6 +20,8 @@
     "testio"
   ],
   "dependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
     "@types/node": "^12.12.31",
     "sinon": "^8.1.1",
     "source-map-loader": "^0.2.4",
