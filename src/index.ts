@@ -1,8 +1,8 @@
 import * as adapterSubscribe from "./fakes/adapterSubscribe";
+import * as adapterUnsubscribe from "./fakes/adapterUnsubscribe";
+import * as clearInterval from "./fakes/clearInterval";
+import * as clearStateDelayed from "./fakes/clearStateDelayed";
 
-import adapterUnsubscribe = require("./fakes/adapterUnsubscribe");
-import clearInterval = require("./fakes/clearInterval");
-import clearStateDelayed = require("./fakes/clearStateDelayed");
 import clearTimeout = require("./fakes/clearTimeout");
 import compareTime = require("./fakes/compareTime");
 import createState = require("./fakes/createState");
