@@ -120,7 +120,7 @@ declare global {
 // tslint:disable-next-line: typedef
 const _global = global as any;
 
-_global.check = function check(scriptPath: string, testFunction: () => void): void {
+export function check(scriptPath: string, testFunction: () => void): void {
   const requirePath: string = __dirname.includes("node_modules") ? `../../${scriptPath}` : scriptPath;
 
   try {
@@ -137,4 +137,6 @@ _global.check = function check(scriptPath: string, testFunction: () => void): vo
       }
     });
   }
-};
+}
+
+_global.check = check;
