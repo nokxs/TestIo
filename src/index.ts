@@ -3,9 +3,9 @@ import { AdapterUnsubscribe } from "./fakes/adapterUnsubscribe";
 import { ClearInterval } from "./fakes/clearInterval";
 import { ClearSchedule } from "./fakes/clearSchedule";
 import { ClearStateDelayed } from "./fakes/clearStateDelayed";
+import { ClearTimeout } from "./fakes/clearTimeout";
 import { CompareTime } from "./fakes/compareTime";
 
-import clearTimeout = require("./fakes/clearTimeout");
 import createState = require("./fakes/createState");
 import deleteObject = require("./fakes/deleteObject");
 import deleteState = require("./fakes/deleteState");
@@ -60,7 +60,7 @@ export const mocks: any = {
   clearInterval: new ClearInterval(),
   clearSchedule: new ClearSchedule(),
   clearStateDelayed: new ClearStateDelayed(),
-  clearTimeout,
+  clearTimeout: new ClearTimeout(),
   compareTime: new CompareTime(),
   createState,
   deleteObject,
