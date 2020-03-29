@@ -1,9 +1,9 @@
-import * as adapterSubscribe from "./fakes/adapterSubscribe";
+import { AdapterSubscribe } from "./fakes/adapterSubscribe";
 import { AdapterUnsubscribe } from "./fakes/adapterUnsubscribe";
-import { IIobrokerFake } from "./fakes/common/IIobrokerFake";
-import * as clearInterval from "./fakes/clearInterval";
-import * as clearStateDelayed from "./fakes/clearStateDelayed";
+import { ClearInterval } from "./fakes/clearInterval";
+import { ClearSchedule } from "./fakes/clearSchedule";
 
+import * as clearStateDelayed from "./fakes/clearStateDelayed";
 import clearTimeout = require("./fakes/clearTimeout");
 import compareTime = require("./fakes/compareTime");
 import createState = require("./fakes/createState");
@@ -14,7 +14,6 @@ import exec = require("./fakes/exec");
 import extendObject = require("./fakes/extendObject");
 import formatDate = require("./fakes/formatDate");
 import formatValue = require("./fakes/formatValue");
-import clearSchedule = require("./fakes/clearSchedule");
 import getAttr = require("./fakes/getAttr");
 import getAstroDate = require("./fakes/getAstroDate");
 import getBinaryState = require("./fakes/getBinaryState");
@@ -56,9 +55,10 @@ import unsubscribe = require("./fakes/unsubscribe");
 import writeFile = require("./fakes/writeFile");
 
 export const mocks: any = {
-  adapterSubscribe,
+  adapterSubscribe: new AdapterSubscribe(),
   adapterUnsubscribe: new AdapterUnsubscribe(),
-  clearInterval,
+  clearInterval: new ClearInterval(),
+  clearSchedule: new ClearSchedule(),
   clearStateDelayed,
   clearTimeout,
   compareTime,
@@ -70,7 +70,6 @@ export const mocks: any = {
   extendObject,
   formatDate,
   formatValue,
-  clearSchedule,
   getAttr,
   getAstroDate,
   getBinaryState,

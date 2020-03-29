@@ -1,11 +1,10 @@
 import * as sinon from "sinon";
+import { IobrokerFakeBase } from "./common/IobrokerFakeBase";
 
-export const fake: sinon.SinonStub = sinon.stub();
-
-export function resetHistory(): void {
-  fake.resetHistory();
+export class ClearInterval extends IobrokerFakeBase {
+  registerGlobalFake(fakeCopy: sinon.SinonStub): void {
+    (<any>global).clearInterval = function clearInterval(id: string): void {
+      fakeCopy(id);
+    };
+  }
 }
-
-(<any>global).clearInterval = function clearInterval(id: string): void {
-  fake(id);
-};
