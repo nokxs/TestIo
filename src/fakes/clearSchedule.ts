@@ -1,4 +1,3 @@
-import * as sinon from "sinon";
 import { IobrokerFakeBase } from "./common/IobrokerFakeBase";
 
 export class ClearSchedule extends IobrokerFakeBase {

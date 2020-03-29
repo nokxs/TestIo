@@ -1,5 +1,5 @@
-import { IIobrokerFake } from "./IIobrokerFake";
 import sinon = require("sinon");
+import { IIobrokerFake } from "./IIobrokerFake";
 
 export abstract class IobrokerFakeBase implements IIobrokerFake {
   public fake: sinon.SinonStub = sinon.stub();
