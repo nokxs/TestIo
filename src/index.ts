@@ -13,10 +13,10 @@ import { Exec } from "./fakes/exec";
 import { ExtendObject } from "./fakes/extendObject";
 import { FormatDate } from "./fakes/formatDate";
 import { FormatValue } from "./fakes/formatValue";
+import { GetAttr } from "./fakes/getAttr";
+import { GetAstroDate } from "./fakes/getAstroDate";
+import { GetBinaryState } from "./fakes/getBinaryState";
 
-import getAttr = require("./fakes/getAttr");
-import getAstroDate = require("./fakes/getAstroDate");
-import getBinaryState = require("./fakes/getBinaryState");
 import getDateObject = require("./fakes/getDateObject");
 import getEnums = require("./fakes/getEnums");
 import getHistory = require("./fakes/getHistory");
@@ -54,6 +54,7 @@ import subscribe = require("./fakes/subscribe");
 import unsubscribe = require("./fakes/unsubscribe");
 import writeFile = require("./fakes/writeFile");
 
+// todo: create type for mocks
 export const mocks: any = {
   adapterSubscribe: new AdapterSubscribe(),
   adapterUnsubscribe: new AdapterUnsubscribe(),
@@ -70,9 +71,9 @@ export const mocks: any = {
   extendObject: new ExtendObject(),
   formatDate: new FormatDate(),
   formatValue: new FormatValue(),
-  getAttr,
-  getAstroDate,
-  getBinaryState,
+  getAttr: new GetAttr(),
+  getAstroDate: new GetAstroDate(),
+  getBinaryState: new GetBinaryState(),
   getDateObject,
   getEnums,
   getHistory,
