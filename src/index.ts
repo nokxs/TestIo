@@ -1,5 +1,6 @@
 import * as adapterSubscribe from "./fakes/adapterSubscribe";
-import { AdapterUnsubscribe, IIobrokerFake } from "./fakes/adapterUnsubscribe";
+import { AdapterUnsubscribe } from "./fakes/adapterUnsubscribe";
+import { IIobrokerFake } from "./fakes/common/IIobrokerFake";
 import * as clearInterval from "./fakes/clearInterval";
 import * as clearStateDelayed from "./fakes/clearStateDelayed";
 
