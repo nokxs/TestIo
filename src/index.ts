@@ -6,8 +6,8 @@ import { ClearStateDelayed } from "./fakes/clearStateDelayed";
 import { ClearTimeout } from "./fakes/clearTimeout";
 import { CompareTime } from "./fakes/compareTime";
 import { CreateState } from "./fakes/createState";
+import { DeleteObject } from "./fakes/deleteObject";
 
-import deleteObject = require("./fakes/deleteObject");
 import deleteState = require("./fakes/deleteState");
 import delFile = require("./fakes/delFile");
 import exec = require("./fakes/exec");
@@ -63,7 +63,7 @@ export const mocks: any = {
   clearTimeout: new ClearTimeout(),
   compareTime: new CompareTime(),
   createState: new CreateState(),
-  deleteObject,
+  deleteObject: new DeleteObject(),
   deleteState,
   delFile,
   exec,
