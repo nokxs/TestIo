@@ -7,13 +7,13 @@ import { ClearTimeout } from "./fakes/clearTimeout";
 import { CompareTime } from "./fakes/compareTime";
 import { CreateState } from "./fakes/createState";
 import { DeleteObject } from "./fakes/deleteObject";
+import { DeleteState } from "./fakes/deleteState";
+import { DelFile } from "./fakes/delFile";
+import { Exec } from "./fakes/exec";
+import { ExtendObject } from "./fakes/extendObject";
+import { FormatDate } from "./fakes/formatDate";
+import { FormatValue } from "./fakes/formatValue";
 
-import deleteState = require("./fakes/deleteState");
-import delFile = require("./fakes/delFile");
-import exec = require("./fakes/exec");
-import extendObject = require("./fakes/extendObject");
-import formatDate = require("./fakes/formatDate");
-import formatValue = require("./fakes/formatValue");
 import getAttr = require("./fakes/getAttr");
 import getAstroDate = require("./fakes/getAstroDate");
 import getBinaryState = require("./fakes/getBinaryState");
@@ -64,12 +64,12 @@ export const mocks: any = {
   compareTime: new CompareTime(),
   createState: new CreateState(),
   deleteObject: new DeleteObject(),
-  deleteState,
-  delFile,
-  exec,
-  extendObject,
-  formatDate,
-  formatValue,
+  deleteState: new DeleteState(),
+  delFile: new DelFile(),
+  exec: new Exec(),
+  extendObject: new ExtendObject(),
+  formatDate: new FormatDate(),
+  formatValue: new FormatValue(),
   getAttr,
   getAstroDate,
   getBinaryState,
