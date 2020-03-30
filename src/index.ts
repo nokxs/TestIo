@@ -16,13 +16,13 @@ import { FormatValue } from "./fakes/formatValue";
 import { GetAttr } from "./fakes/getAttr";
 import { GetAstroDate } from "./fakes/getAstroDate";
 import { GetBinaryState } from "./fakes/getBinaryState";
+import { GetDateObject } from "./fakes/getDateObject";
+import { GetEnums } from "./fakes/getEnums";
+import { GetHistory } from "./fakes/getHistory";
+import { GetIdByName } from "./fakes/getIdByName";
+import { GetObject } from "./fakes/getObject";
+import { GetState } from "./fakes/getState";
 
-import getDateObject = require("./fakes/getDateObject");
-import getEnums = require("./fakes/getEnums");
-import getHistory = require("./fakes/getHistory");
-import getIdByName = require("./fakes/getIdByName");
-import getObject = require("./fakes/getObject");
-import getState = require("./fakes/getState");
 import getStateDelayed = require("./fakes/getStateDelayed");
 import getSubscriptions = require("./fakes/getSubscriptions");
 import instance = require("./fakes/instance");
@@ -45,7 +45,7 @@ import sendToHost = require("./fakes/sendToHost");
 import setBinaryState = require("./fakes/setBinaryState");
 import setInterval = require("./fakes/setInterval");
 import setObject = require("./fakes/setObject");
-import setState = require("./fakes/setState.js");
+import { SetState } from "./fakes/setState.js";
 import setStateDelayed = require("./fakes/setStateDelayed");
 import setTimeout = require("./fakes/setTimeout");
 import startScript = require("./fakes/startScript");
@@ -74,12 +74,12 @@ export const mocks: any = {
   getAttr: new GetAttr(),
   getAstroDate: new GetAstroDate(),
   getBinaryState: new GetBinaryState(),
-  getDateObject,
-  getEnums,
-  getHistory,
-  getIdByName,
-  getObject,
-  getState,
+  getDateObject: new GetDateObject(),
+  getEnums: new GetEnums(),
+  getHistory: new GetHistory(),
+  getIdByName: new GetIdByName(),
+  getObject: new GetObject(),
+  getState: new GetState(),
   getStateDelayed,
   getSubscriptions,
   instance,
@@ -102,7 +102,7 @@ export const mocks: any = {
   setBinaryState,
   setInterval,
   setObject,
-  setState,
+  setState: new SetState(),
   setStateDelayed,
   setTimeout,
   startScript,
