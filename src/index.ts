@@ -23,13 +23,13 @@ import { GetIdByName } from "./fakes/getIdByName";
 import { GetObject } from "./fakes/getObject";
 import { GetState } from "./fakes/getState";
 
-import getStateDelayed = require("./fakes/getStateDelayed");
-import getSubscriptions = require("./fakes/getSubscriptions");
-import instance = require("./fakes/instance");
-import isAstroDay = require("./fakes/isAstroDay");
-import isScriptActive = require("./fakes/isScriptActive");
-import log = require("./fakes/log.js");
-import messageTo = require("./fakes/messageTo");
+import { GetStateDelayed } from "./fakes/getStateDelayed";
+import { GetSubscriptions } from "./fakes/getSubscriptions";
+import { Instance } from "./fakes/instance";
+import { IsAstroDay } from "./fakes/isAstroDay";
+import { IsScriptActive } from "./fakes/isScriptActive";
+import { Log } from "./fakes/log";
+import { MessageTo } from "./fakes/messageTo";
 import name = require("./fakes/name");
 import on = require("./fakes/on.js");
 import onLog = require("./fakes/onLog");
@@ -80,13 +80,13 @@ export const mocks: any = {
   getIdByName: new GetIdByName(),
   getObject: new GetObject(),
   getState: new GetState(),
-  getStateDelayed,
-  getSubscriptions,
-  instance,
-  isAstroDay,
-  isScriptActive,
-  log,
-  messageTo,
+  getStateDelayed: new GetStateDelayed(),
+  getSubscriptions: new GetSubscriptions(),
+  instance: new Instance(),
+  isAstroDay: new IsAstroDay(),
+  isScriptActive: new IsScriptActive(),
+  log: new Log(),
+  messageTo: new MessageTo(),
   name,
   on,
   onLog,
