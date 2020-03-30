@@ -15,7 +15,7 @@ export class SetState extends IobrokerFakeBase {
     };
   }
 
-  getState(id: string): any | null {
+  getLastSetState(id: string): any | null {
     const call: sinon.SinonSpyCall = this.fake.getCalls().reverse().find((c) => c.args[0] === id);
 
     if (call) {

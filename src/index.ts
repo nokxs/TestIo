@@ -45,7 +45,7 @@ import sendToHost = require("./fakes/sendToHost");
 import setBinaryState = require("./fakes/setBinaryState");
 import setInterval = require("./fakes/setInterval");
 import setObject = require("./fakes/setObject");
-import { SetState } from "./fakes/setState.js";
+import { SetState } from "./fakes/setState";
 import setStateDelayed = require("./fakes/setStateDelayed");
 import setTimeout = require("./fakes/setTimeout");
 import startScript = require("./fakes/startScript");
