@@ -30,8 +30,8 @@ import { IsAstroDay } from "./fakes/isAstroDay";
 import { IsScriptActive } from "./fakes/isScriptActive";
 import { Log } from "./fakes/log";
 import { MessageTo } from "./fakes/messageTo";
-import name = require("./fakes/name");
-import on = require("./fakes/on.js");
+import { Name } from "./fakes/name";
+import { On } from "./fakes/on";
 import onLog = require("./fakes/onLog");
 import onLogUnregister = require("./fakes/onLogUnregister");
 import onMessage = require("./fakes/onMessage");
@@ -50,7 +50,7 @@ import setStateDelayed = require("./fakes/setStateDelayed");
 import setTimeout = require("./fakes/setTimeout");
 import startScript = require("./fakes/startScript");
 import stopScript = require("./fakes/stopScript");
-import subscribe = require("./fakes/subscribe");
+import { Subscribe } from "./fakes/subscribe";
 import unsubscribe = require("./fakes/unsubscribe");
 import writeFile = require("./fakes/writeFile");
 
@@ -87,8 +87,8 @@ export const mocks: any = {
   isScriptActive: new IsScriptActive(),
   log: new Log(),
   messageTo: new MessageTo(),
-  name,
-  on,
+  name: new Name(),
+  on: new On(),
   onLog,
   onLogUnregister,
   onMessage,
@@ -107,7 +107,7 @@ export const mocks: any = {
   setTimeout,
   startScript,
   stopScript,
-  subscribe,
+  subscribe: new Subscribe(),
   unsubscribe,
   writeFile,
 };
