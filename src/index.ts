@@ -22,7 +22,6 @@ import { GetHistory } from "./fakes/getHistory";
 import { GetIdByName } from "./fakes/getIdByName";
 import { GetObject } from "./fakes/getObject";
 import { GetState } from "./fakes/getState";
-
 import { GetStateDelayed } from "./fakes/getStateDelayed";
 import { GetSubscriptions } from "./fakes/getSubscriptions";
 import { Instance } from "./fakes/instance";
@@ -32,9 +31,9 @@ import { Log } from "./fakes/log";
 import { MessageTo } from "./fakes/messageTo";
 import { Name } from "./fakes/name";
 import { On } from "./fakes/on";
-import onLog = require("./fakes/onLog");
-import onLogUnregister = require("./fakes/onLogUnregister");
-import onMessage = require("./fakes/onMessage");
+import { OnLog } from "./fakes/onLog";
+import { OnLogUnregister } from "./fakes/onLogUnregister";
+import { OnMessage } from "./fakes/onMessage";
 import onMessageUnregister = require("./fakes/onMessageUnregister");
 import onStop = require("./fakes/onStop");
 import readFile = require("./fakes/readFile");
@@ -89,9 +88,9 @@ export const mocks: any = {
   messageTo: new MessageTo(),
   name: new Name(),
   on: new On(),
-  onLog,
-  onLogUnregister,
-  onMessage,
+  onLog: new OnLog(),
+  onLogUnregister: new OnLogUnregister(),
+  onMessage: new OnMessage(),
   onMessageUnregister,
   onStop,
   readFile,
