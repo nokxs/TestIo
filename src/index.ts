@@ -34,24 +34,25 @@ import { On } from "./fakes/on";
 import { OnLog } from "./fakes/onLog";
 import { OnLogUnregister } from "./fakes/onLogUnregister";
 import { OnMessage } from "./fakes/onMessage";
-import onMessageUnregister = require("./fakes/onMessageUnregister");
-import onStop = require("./fakes/onStop");
-import readFile = require("./fakes/readFile");
-import runScript = require("./fakes/runScript");
-import schedule = require("./fakes/schedule");
-import sendTo = require("./fakes/sendTo");
-import sendToHost = require("./fakes/sendToHost");
-import setBinaryState = require("./fakes/setBinaryState");
-import setInterval = require("./fakes/setInterval");
-import setObject = require("./fakes/setObject");
+import { OnMessageUnregister } from "./fakes/onMessageUnregister";
+import { OnStop } from "./fakes/onStop";
+import { ReadFile } from "./fakes/readFile";
+import { RunScript } from "./fakes/runScript";
+import { Schedule } from "./fakes/schedule";
+import { SendTo } from "./fakes/sendTo";
+import { SendToHost } from "./fakes/sendToHost";
+import { SetBinaryState } from "./fakes/setBinaryState";
+import { SetInterval } from "./fakes/setInterval";
+import { SetObject } from "./fakes/setObject";
 import { SetState } from "./fakes/setState";
-import setStateDelayed = require("./fakes/setStateDelayed");
-import setTimeout = require("./fakes/setTimeout");
-import startScript = require("./fakes/startScript");
-import stopScript = require("./fakes/stopScript");
+import { SetStateDelayed } from "./fakes/setStateDelayed";
+import { SetTimeout } from "./fakes/setTimeout";
+import { StartScript } from "./fakes/startScript";
+import { StopScript } from "./fakes/stopScript";
 import { Subscribe } from "./fakes/subscribe";
-import unsubscribe = require("./fakes/unsubscribe");
-import writeFile = require("./fakes/writeFile");
+import { Unsubscribe } from "./fakes/unsubscribe";
+import { WriteFile } from "./fakes/writeFile";
+import { writeFile } from "fs";
 
 // todo: create type for mocks
 export const mocks: any = {
@@ -91,24 +92,24 @@ export const mocks: any = {
   onLog: new OnLog(),
   onLogUnregister: new OnLogUnregister(),
   onMessage: new OnMessage(),
-  onMessageUnregister,
-  onStop,
-  readFile,
-  runScript,
-  schedule,
-  sendTo,
-  sendToHost,
-  setBinaryState,
-  setInterval,
-  setObject,
+  onMessageUnregister: new OnMessageUnregister(),
+  onStop: new OnStop(),
+  readFile: new ReadFile(),
+  runScript: new RunScript(),
+  schedule: new Schedule(),
+  sendTo: new SendTo(),
+  sendToHost: new SendToHost(),
+  setBinaryState: new SetBinaryState(),
+  setInterval: new SetInterval(),
+  setObject: new SetObject(),
   setState: new SetState(),
-  setStateDelayed,
-  setTimeout,
-  startScript,
-  stopScript,
+  setStateDelayed: new SetStateDelayed(),
+  setTimeout: new SetTimeout(),
+  startScript: new StartScript(),
+  stopScript: new StopScript(),
   subscribe: new Subscribe(),
-  unsubscribe,
-  writeFile,
+  unsubscribe: new Unsubscribe(),
+  writeFile: new WriteFile(),
 };
 
 export function check(scriptPath: string, testFunction: () => void): void {
