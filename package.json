@@ -1,11 +1,11 @@
 {
   "name": "iobroker-test-io",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A framework to test ioBroker JavaScript scripts",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "tsc:w": "tsc -w",
-    "test": "mocha -r ts-node/register test/**/*.tests.ts"
+    "test": "mocha -r ts-node/register test/**/*.tests.ts",
+    "build": "webpack --mode production --progress"
   },
   "author": "nokxs",
   "license": "MIT",
