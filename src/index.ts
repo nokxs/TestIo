@@ -112,7 +112,7 @@ export const fakes: any = {
 };
 
 export function check(scriptPath: string, testFunction: () => void): void {
-  let requirePath: string = __dirname.includes("node_modules") ? `../../${scriptPath}` : scriptPath;
+  let requirePath: string = __dirname.includes("node_modules") ? `../../../${scriptPath}` : scriptPath;
 
   try {
     require(requirePath);
