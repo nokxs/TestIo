@@ -1,6 +1,6 @@
 module.exports = {
   mode: "development",
-  devtool: "inline-source-map",
+  // devtool: "inline-source-map",
   entry: "./src/index.ts",
   output: {
     filename: "index.js",
@@ -14,5 +14,10 @@ module.exports = {
       // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
       { test: /\.tsx?$/, loader: "ts-loader", exclude: "/node_modules/" },
     ],
+    noParse: /\/native-require.js$/,
   },
+  target: 'node',
+  node: {
+    __dirname: false
+  }
 };

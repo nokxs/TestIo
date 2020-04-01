@@ -4,10 +4,11 @@
         "allowJs": true,
         "checkJs": false,
         "target": "es5",
-        "sourceMap": true,
-        "declaration": true
+        "sourceMap": false,
+        "declaration": true,                                                                                                                                                                             
+        "types": ["node"]   
     },
     "include": [
-        "./src/**/*"
+        "src/**/*"
     ]
 }

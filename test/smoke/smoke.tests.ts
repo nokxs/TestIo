@@ -1,6 +1,7 @@
 import { describe, it } from "mocha";
 
-import { check } from "../../src";
+// import { check } from "../../src";
+import { check } from "../../dist";
 
 describe("Smoke test", () => {
   it("loads script", () => {

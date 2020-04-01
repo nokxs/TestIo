@@ -52,10 +52,9 @@ import { StopScript } from "./fakes/stopScript";
 import { Subscribe } from "./fakes/subscribe";
 import { Unsubscribe } from "./fakes/unsubscribe";
 import { WriteFile } from "./fakes/writeFile";
-import { writeFile } from "fs";
 
 // todo: create type for mocks
-export const mocks: any = {
+export const fakes: any = {
   adapterSubscribe: new AdapterSubscribe(),
   adapterUnsubscribe: new AdapterUnsubscribe(),
   clearInterval: new ClearInterval(),
@@ -113,20 +112,21 @@ export const mocks: any = {
 };
 
 export function check(scriptPath: string, testFunction: () => void): void {
-  const requirePath: string = __dirname.includes("node_modules") ? `../../${scriptPath}` : scriptPath;
+  let requirePath: string = __dirname.includes("node_modules") ? `../../${scriptPath}` : scriptPath;
 
   try {
-    // eslint-disable-next-line import/no-dynamic-require, global-require
     require(requirePath);
     testFunction();
   } finally {
     const scriptName: string = require.resolve(requirePath);
     delete require.cache[scriptName];
 
-    Object.values(mocks).forEach((fake: any) => {
+    Object.values(fakes).forEach((fake: any) => {
       if (typeof fake.resetHistory === "function") {
         fake.resetHistory();
       }
     });
   }
 }
+
+(<any>global).check = check;
