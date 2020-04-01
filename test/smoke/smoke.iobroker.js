@@ -1,3 +1,7 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-undef */
 /* eslint-disable quotes */
 
 log("test", "warn");
@@ -10,7 +14,7 @@ clearSchedule();
 getAttr({ attr1: true }, "attr1");
 getAstroDate("sunriseEnd");
 isAstroDay();
-compareTime('sunsetStart', 'sunsetEnd', 'between')
+compareTime('sunsetStart', 'sunsetEnd', 'between');
 setState("test", true);
 setBinaryState("test", 0x123);
 setStateDelayed("test", false, 1000);
@@ -48,7 +52,7 @@ stopScript("scriptName", () => {});
 isScriptActive("scriptName");
 name;
 instance;
-messageTo({instance: 'instance', script: 'script.js.common.scriptName', message: 'messageName'}, {}, {timeout: 1000}, (result) => {});
+messageTo({ instance: 'instance', script: 'script.js.common.scriptName', message: 'messageName' }, {}, { timeout: 1000 }, (result) => {});
 onMessage("message", (data, cb) => {});
 onMessageUnregister("message", (data, cb) => {});
 onLog("error", (data) => {});

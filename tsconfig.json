@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "allowJs": true,
+        "checkJs": false,
+        "target": "es5",
+        "sourceMap": false,
+        "declaration": true,                                                                                                                                                                             
+        "types": ["node"]   
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
