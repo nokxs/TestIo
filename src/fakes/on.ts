@@ -24,6 +24,11 @@ export class On extends IobrokerFakeBase {
     };
   }
 
+  resetHistory(): void {
+    super.resetHistory();
+    this.registerGlobalFake(this.fake); // re-register the fake, to reset it
+  }
+
   trigger(id: string, value: IOnCallbackResult): void {
     const matches: Array<IOnCall> = this.repository.filter((onCall) => {
       if (typeof onCall.pattern === "string") {
