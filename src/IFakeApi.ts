@@ -52,81 +52,60 @@ import { StopScript } from "./fakes/stopScript";
 import { Subscribe } from "./fakes/subscribe";
 import { Unsubscribe } from "./fakes/unsubscribe";
 import { WriteFile } from "./fakes/writeFile";
-import { IFakeApi } from "./IFakeApi";
 
-export const fakes: IFakeApi = {
-  adapterSubscribe: new AdapterSubscribe(),
-  adapterUnsubscribe: new AdapterUnsubscribe(),
-  clearInterval: new ClearInterval(),
-  clearSchedule: new ClearSchedule(),
-  clearStateDelayed: new ClearStateDelayed(),
-  clearTimeout: new ClearTimeout(),
-  compareTime: new CompareTime(),
-  createState: new CreateState(),
-  deleteObject: new DeleteObject(),
-  deleteState: new DeleteState(),
-  delFile: new DelFile(),
-  exec: new Exec(),
-  extendObject: new ExtendObject(),
-  formatDate: new FormatDate(),
-  formatValue: new FormatValue(),
-  getAttr: new GetAttr(),
-  getAstroDate: new GetAstroDate(),
-  getBinaryState: new GetBinaryState(),
-  getDateObject: new GetDateObject(),
-  getEnums: new GetEnums(),
-  getHistory: new GetHistory(),
-  getIdByName: new GetIdByName(),
-  getObject: new GetObject(),
-  getState: new GetState(),
-  getStateDelayed: new GetStateDelayed(),
-  getSubscriptions: new GetSubscriptions(),
-  instance: new Instance(),
-  isAstroDay: new IsAstroDay(),
-  isScriptActive: new IsScriptActive(),
-  log: new Log(),
-  messageTo: new MessageTo(),
-  name: new Name(),
-  on: new On(),
-  onLog: new OnLog(),
-  onLogUnregister: new OnLogUnregister(),
-  onMessage: new OnMessage(),
-  onMessageUnregister: new OnMessageUnregister(),
-  onStop: new OnStop(),
-  readFile: new ReadFile(),
-  runScript: new RunScript(),
-  schedule: new Schedule(),
-  sendTo: new SendTo(),
-  sendToHost: new SendToHost(),
-  setBinaryState: new SetBinaryState(),
-  setInterval: new SetInterval(),
-  setObject: new SetObject(),
-  setState: new SetState(),
-  setStateDelayed: new SetStateDelayed(),
-  setTimeout: new SetTimeout(),
-  startScript: new StartScript(),
-  stopScript: new StopScript(),
-  subscribe: new Subscribe(),
-  unsubscribe: new Unsubscribe(),
-  writeFile: new WriteFile(),
-};
-
-export function check(scriptPath: string, testFunction: () => void): void {
-  let requirePath: string = __dirname.includes("node_modules") ? `../../../${scriptPath}` : scriptPath;
-
-  try {
-    require(requirePath);
-    testFunction();
-  } finally {
-    const scriptName: string = require.resolve(requirePath);
-    delete require.cache[scriptName];
-
-    Object.values(fakes).forEach((fake: any) => {
-      if (typeof fake.resetHistory === "function") {
-        fake.resetHistory();
-      }
-    });
+export interface IFakeApi {
+    adapterSubscribe: AdapterSubscribe;
+    adapterUnsubscribe: AdapterUnsubscribe;
+    clearInterval: ClearInterval;
+    clearSchedule: ClearSchedule;
+    clearStateDelayed: ClearStateDelayed;
+    clearTimeout: ClearTimeout;
+    compareTime: CompareTime;
+    createState: CreateState;
+    deleteObject: DeleteObject;
+    deleteState: DeleteState;
+    delFile: DelFile;
+    exec: Exec;
+    extendObject: ExtendObject;
+    formatDate: FormatDate;
+    formatValue: FormatValue;
+    getAttr: GetAttr;
+    getAstroDate: GetAstroDate;
+    getBinaryState: GetBinaryState;
+    getDateObject: GetDateObject;
+    getEnums: GetEnums;
+    getHistory: GetHistory;
+    getIdByName: GetIdByName;
+    getObject: GetObject;
+    getState: GetState;
+    getStateDelayed: GetStateDelayed;
+    getSubscriptions: GetSubscriptions;
+    instance: Instance;
+    isAstroDay: IsAstroDay;
+    isScriptActive: IsScriptActive;
+    log: Log;
+    messageTo: MessageTo;
+    name: Name;
+    on: On;
+    onLog: OnLog;
+    onLogUnregister: OnLogUnregister;
+    onMessage: OnMessage;
+    onMessageUnregister: OnMessageUnregister;
+    onStop: OnStop;
+    readFile: ReadFile;
+    runScript: RunScript;
+    schedule: Schedule;
+    sendTo: SendTo;
+    sendToHost: SendToHost;
+    setBinaryState: SetBinaryState;
+    setInterval: SetInterval;
+    setObject: SetObject;
+    setState: SetState;
+    setStateDelayed: SetStateDelayed;
+    setTimeout: SetTimeout;
+    startScript: StartScript;
+    stopScript: StopScript;
+    subscribe: Subscribe;
+    unsubscribe: Unsubscribe;
+    writeFile: WriteFile;
   }
-}
-
-(<any>global).check = check;
