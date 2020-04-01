@@ -29,7 +29,7 @@ describe("Switch tests", () => {
         // The check function loads the ioBroker script for the test and unloads it again after the test
         check("../../path/to/ioBroker/script", () => {
             // check if switches.trigger was created as state
-            sinon.assert.calledWith(jsMock.createState.fake, "switches.trigger");
+            sinon.assert.calledWith(testio.fakes.createState.fake, "switches.trigger");
         });
     });
 });
@@ -54,7 +54,7 @@ describe("Switch tests", () => {
         check("../../path/to/ioBroker/script", () => {
 
             // simulate that Shelly_1 is switched on
-            testio.on.trigger("shelly.0.Shelly_1.Relay0.Switch", { 
+            testio.fakes.on.trigger("shelly.0.Shelly_1.Relay0.Switch", { 
                 state: { 
                     ack: true,
                     val: true
@@ -62,7 +62,7 @@ describe("Switch tests", () => {
             });
 
             // check if Shelly_2 is also switched on
-            expect(testio.setState.fake.calledWith("shelly.0.Shelly_2.Relay0.Switch", true)).to.be.true;
+            expect(testio.fakes.setState.fake.calledWith("shelly.0.Shelly_2.Relay0.Switch", true)).to.be.true;
         });
     });
 });
